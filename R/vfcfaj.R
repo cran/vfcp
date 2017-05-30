@@ -2,7 +2,7 @@
 #'
 vfalihaq <- function(C, u, tht){
   # Ali–Mikhail–Haq
-  return((C/u + C*tht*(1 - u)/u)/(C*tht*(1 - u)/u + 1))
+	return(C*(1 - tht*(1 - u))/(u - tht*C*(1 - u)))
 }
 
 #' @export vfjoe

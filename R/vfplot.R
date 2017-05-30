@@ -12,8 +12,11 @@ vfplot <- function(cx, hor, dol, fam, marg, xo, tht, cdf=TRUE,
 		if (plt){
 			xyh = vfmargi(cx, ncx, hor, dol, fam, marg, cdf, xo, tht)
 			xyd = vfmargi(cx, 1, hor, dol, fam, marg, cdf, xo, tht)
-			limx = c(0, max(xyh$gweo, xyd$gweo))
-			limy = c(0, max(xyh$glno, xyd$glno))
+			# limx = c(0, max(xyh$gweo, xyd$gweo))
+			# limy = c(0, max(xyh$glno, xyd$glno))
+			limx = c(min(0, xyh$gweo, xyd$gweo), max(0, xyh$gweo, xyd$gweo))
+			limy = c(min(0, xyh$glno, xyd$glno), max(0, xyh$glno, xyd$glno))
+
 			plot(x=NULL, y=NULL, xlim=limx, ylim=limy,
 					 xlab = paste(marg[1], " (", xo[1], ", ", xo[2], ")", sep = ""),
 					 ylab = paste(marg[2], " (", xo[3], ", ", xo[4], ")", sep = ""),

@@ -1,5 +1,5 @@
-\name{vfplot}
-\alias{vfplot}
+\name{vfploto}
+\alias{vfploto}
 
 \title{
 Plotting the cumulative distribution function or survival function
@@ -8,18 +8,19 @@ Plotting the cumulative distribution function or survival function
 Plotting the cumulative distribution function or survival function.
 }
 \usage{
-vfplot(cx, hor, dol, fam, marg, xo, tht, cdf=TRUE, plt=TRUE, rtn=FALSE)
+vfploto(cx, pro, fam, marg, xo, tht, cdf=TRUE, plt=TRUE, rtn=FALSE)
 }
 
 \arguments{
   \item{cx}{
 A vector of copula probabilities.
 }
-  \item{hor}{
-Upper value of the \code{u}.
-}
-  \item{dol}{
-Number of segments between \code{hor} and probability of copula.
+  \item{pro}{
+Numeric vector. Its \code{pro[1]} is upper value of the \code{u}.
+  Next \code{pro[-1]} are then all greater than or equal to 1.
+  The second case of \code{pro} is all \code{pro} less than 1.
+  The first case is an extra calculation of the \code{u} values.
+  In the latter case, \code{u} values can be pre-selected.
 }
  \item{fam}{
 character; A name of copula. One of c("clayton", "frank", "gumbel",
@@ -74,21 +75,18 @@ Josef Brejcha
 
 \examples{
 require(copula)
-tht = -0.475
-cx = c(0.025, 0.05, seq(0.1, 0.9, 0.1), 0.95, 0.975)
-nC = length(cx)
-hor = 1 - 1e-13
-dol = 50
-fam = "fgm"
-# marg = c("weibull", "weibull")
-# xo = c(100, 2.75, 125, 2.40)
+tht = 0.475
+cx = c(0.0025, 0.05, seq(0.1, 0.9, 0.1), 0.95, 0.975)
+# nC = length(cx)
+pro = c(0.9999999, 8, 4, 4, 4)
+fam = "clayton"
 marg = c("weibull", "lnorm")
-xo = c(100, 1.5, 4, 0.425)
-cdfo = vfplot(cx, hor, dol, fam, marg, xo, tht, cdf=TRUE, plt=TRUE, rtn=FALSE)
-suro = vfplot(cx, hor, dol, fam, marg, xo, tht, cdf=FALSE, plt=TRUE, rtn=FALSE)
-#
+xo = c(100, 1.5, 3, 0.425)
+suro = vfploto(cx, pro, fam, marg, xo, tht, cdf=FALSE, plt=TRUE, rtn=FALSE)
+cdfo = vfploto(cx, pro, fam, marg, xo, tht, cdf=TRUE, plt=TRUE, rtn=FALSE)
+##
 cx = 0.4
-cdfo = vfplot(cx, hor, dol, fam, marg, xo, tht, cdf=TRUE, plt=FALSE, rtn=TRUE)
+vfploto(cx, pro, fam, marg, xo, tht, cdf=TRUE, plt=FALSE, rtn=TRUE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

@@ -1,0 +1,17 @@
+Changes in Version 1.1.0
+
+  o Fixed 'vfalihaq'.
+
+  o Examples have been added to help for 'vfalihaq', 'vfjoe' and 'vffgm'.
+
+  o Next to 'vfplot' is newly 'vfploto'.
+
+  o Instead of the 'vfprip' are 'vfpripo' or 'vfprifo' with vector
+    parameter 'pro' as a substitute for 'hom' and 'jm'.
+
+  o Duo 'vfmrg' and 'vfex' replace 'vfmargi'.
+
+  o 'vfploto' uses 'vfpripo' or 'vfprfo' and 'vfmrg' and 'vfex'
+    as well.
+
+  o Original functions remained in the package.
