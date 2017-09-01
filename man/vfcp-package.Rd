@@ -9,14 +9,17 @@ Computation \code{v} when \code{u} and \code{C(u, v)} copula are
     known. Calculation and plotting of cumulative distribution
     and survival function when \code{u}, \code{C(u, v)} copula
     and marginal distributions are known. These calculations can
-    be tabulated as option.
+    be tabulated as option. The numerical definition of a common
+    area limited by lines of the cumulative distribution function
+    and survival function. Approximate quantification of the
+    probability of this area.
 }
 \details{
 \tabular{ll}{
 Package: \tab vfcp\cr
 Type: \tab Package\cr
-Version: \tab 1.1.0\cr
-Date: \tab 2017-05-30\cr
+Version: \tab 1.2.0\cr
+Date: \tab 2017-08-31\cr
 License: \tab GPL (>= 3)\cr
 }
 }
@@ -33,4 +36,5 @@ M. Mahfoud, "Bivariate Archimedean copulas: an application to two stock market
 indices", \emph{Vrije Universiteit Amsterdam}, \bold{BMI Paper}, Amsterdam-2012,
 \url{http://docplayer.net/24882927-Bivariate-archimedean-copulas-an-application-to-two-stock-market-indices.html} \cr \cr
 Copula (probability theory), \url{https://en.wikipedia.org/wiki/Copula_(probability_theory)}
+Statistical - Distributions - Inverted Beta distribution - Example, \url{http://www.xycoon.com/ibeta.htm}
 }

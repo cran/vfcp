@@ -12,7 +12,7 @@ vfmargi <- function(cx, k, hor, dol, fam, marg, cdf, xo, tht){
 			if (fam == "gumbel"){
 				gu = vfgumbel(cx[k], u, tht)
 			} else {
-				if (fam == "alihaq"){
+				if (fam == "amh"){
 					gu = vfalihaq(cx[k], u, tht)
 				} else {
 					if (fam == "joe"){

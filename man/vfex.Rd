@@ -24,7 +24,7 @@ Copula parameter.
 }
   \item{fm}{
 character; A name of copula. One of c("clayton", "frank", "gumbel",
-    "alihaq", "joe", "fgm"). "alihaq", "joe", "fgm" names are for
+    "amh", "joe", "fgm"). "amh", "joe", "fgm" names are for
     Ali-Mikhail-Haq, Joe, Farlie-Gumbel-Morgenstern copulas.
 }
 }

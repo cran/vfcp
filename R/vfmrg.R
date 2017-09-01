@@ -1,4 +1,6 @@
 #' @export vfmrg
+#' @importFrom extraDistr qbetapr
+#' @importFrom stats qbeta
 #'
 vfmrg <- function(rdj, i, cosi, yo, cdf)
 {
@@ -12,7 +14,15 @@ vfmrg <- function(rdj, i, cosi, yo, cdf)
 			if (rdj[i] == "lnorm"){
 				ha = qlnorm(posi, meanlog = yo[2*i - 1], sdlog = yo[2*i])
 			} else {
-				ha = qnorm(posi, mean = yo[2*i - 1], sd = yo[2*i])
+				if (rdj[i] == "norm"){
+					ha = qnorm(posi, mean = yo[2*i - 1], sd = yo[2*i])
+				} else {
+					if (rdj[i] == "betapr"){
+						ha = qbetapr(posi, shape1 = yo[2*i - 1], shape2 = yo[2*i])
+					} else {
+						ha = qbeta(posi, shape1 = yo[2*i - 1], shape2 = yo[2*i])
+					}
+				}
 			}
 		}
 	}

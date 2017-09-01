@@ -1,3 +1,23 @@
+Changes in Version 1.2.0
+
+	o The name copula 'alihaq' has been changed to 'amh' as shown
+	  in the 'copula' package.
+
+	o Added four functions: 'fxa', 'prunikus', 'CSmeze', 'vfpint'.
+	  Their use is demonstrated in the examples in the help for 'CSmeze'.
+
+	o 'Vfpripo': Originally was only the first component of the vector
+	  'pro' smaller than 1. Now, there may be more, but just behind
+	  a 'pro[i + 1] < pro[i]', i = 1, ... , k.
+
+  o In NAMESPACE, the missing 'vfex' is added.
+
+  o Added distributions 'BetaPrime' and 'Beta'.
+
+  o Added 'vfeduo' to compute expected values of marginals.
+
+  o Added option 'ped' into 'vfploto' to applicate 'vfeduo'.
+
 Changes in Version 1.1.0
 
   o Fixed 'vfalihaq'.

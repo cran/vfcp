@@ -8,7 +8,8 @@ Plotting the cumulative distribution function or survival function
 Plotting the cumulative distribution function or survival function.
 }
 \usage{
-vfploto(cx, pro, fam, marg, xo, tht, cdf=TRUE, plt=TRUE, rtn=FALSE)
+vfploto(cx, pro, fam, marg, xo, tht, cdf=TRUE, plt=TRUE, rtn=FALSE,
+  ped = TRUE)
 }
 
 \arguments{
@@ -24,19 +25,19 @@ Numeric vector. Its \code{pro[1]} is upper value of the \code{u}.
 }
  \item{fam}{
 character; A name of copula. One of c("clayton", "frank", "gumbel",
-    "alihaq", "joe", "fgm"). "alihaq", "joe", "fgm" names are for
+    "amh", "joe", "fgm"). "amh", "joe", "fgm" names are for
     Ali-Mikhail-Haq, Joe, Farlie-Gumbel-Morgenstern copulas.
 }
  \item{marg}{
 A vector size 2. Combination of these marginals: \cr
-  c("weibull", "gamma", "lnorm", "norm").
+  c("weibull", "gamma", "lnorm", "norm", "betapr", "beta").
 }
   \item{xo}{
 A vector of marginal distribution parameters. It is size 4
   with these components: \cr
 \tabular{rl}{
-  \code{xo[1], xo[3]} \tab {shape, meanlog, mean} \cr
-  \code{xo[2], xo[4]} \tab {scale, sdlog, sd} \cr
+  \code{xo[1], xo[3]} \tab {scale, meanlog, mean, shape1} \cr
+  \code{xo[2], xo[4]} \tab {shape, sdlog, sd, shape2} \cr
 }
 }
   \item{tht}{
@@ -52,6 +53,10 @@ Plot only when TRUE.
   \item{rtn}{
 Print output value only when TRUE.
 }
+  \item{ped}{
+Compute and add to plot an expected values o f marginal
+  distributions when \eqn{ped = TRUE}.
+  }
 }
 
 \details{
@@ -78,15 +83,17 @@ require(copula)
 tht = 0.475
 cx = c(0.0025, 0.05, seq(0.1, 0.9, 0.1), 0.95, 0.975)
 # nC = length(cx)
-pro = c(0.9999999, 8, 4, 4, 4)
+proh = c(0.9999999, 8, 4, 4, 4)
+prod = c(0.999, 8, 4, 4, 4)
 fam = "clayton"
 marg = c("weibull", "lnorm")
 xo = c(100, 1.5, 3, 0.425)
-suro = vfploto(cx, pro, fam, marg, xo, tht, cdf=FALSE, plt=TRUE, rtn=FALSE)
-cdfo = vfploto(cx, pro, fam, marg, xo, tht, cdf=TRUE, plt=TRUE, rtn=FALSE)
+suro = vfploto(cx, proh, fam, marg, xo, tht, cdf=FALSE, plt=TRUE, rtn=FALSE)
+cdfo = vfploto(cx, prod, fam, marg, xo, tht, cdf=TRUE, plt=TRUE, rtn=FALSE)
 ##
 cx = 0.4
-vfploto(cx, pro, fam, marg, xo, tht, cdf=TRUE, plt=FALSE, rtn=TRUE)
+vfploto(cx, proh, fam, marg, xo, tht, cdf=TRUE, plt=FALSE, rtn=TRUE,
+        ped = TRUE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

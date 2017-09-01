@@ -1,3 +1,5 @@
+#' @export vfex
+#'
 vfex <- function(C, u, th, fm)
 {
 	if (fm == "clayton"){
@@ -12,7 +14,7 @@ vfex <- function(C, u, th, fm)
 				if (fm == "fgm"){
 					v = vffgm(C, u, th)
 				} else {
-					if (fm == "alihaq"){
+					if (fm == "amh"){
 						v = vfalihaq(C, u, th)
 					} else {
 						v = vfjoe(C, u, th)
