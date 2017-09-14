@@ -34,12 +34,12 @@ and copula probability value.
 Josef Brejcha
 }
 \examples{
-require(VineCopula)
 C <- 0.3
 tht <- 6
 u <- c(0.35, 0.4, 0.45)
 v <- vfclayton(C, u, tht)
-BiCopCDF(u, v, family = 3, par = tht)
+kop = claytonCopula(tht)
+pCopula(cbind(u, v), kop)
 #
 Cf <- c(0.3, 0.4)
 mx <- matrix(c(seq(0.35, 0.45, 0.05), seq(0.5, 0.6, 0.05)),

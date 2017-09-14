@@ -34,12 +34,12 @@ and copula probability value.
 Josef Brejcha
 }
 \examples{
-require(VineCopula)
 C <- 0.3
 tht <- 6
 u <- c(0.35, 0.4, 0.45)
 v <- vfgumbel(C, u, tht)
-BiCopCDF(u, v, family = 4, par = tht)
+kop = gumbelCopula(tht)
+pCopula(cbind(u, v), kop)
 #
 vfgumbel(c(0.3, 0.4), u = rbind(seq(0.35, 0.45, 0.05),
   seq(0.45, 0.55, 0.05)), 8)

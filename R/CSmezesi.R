@@ -1,10 +1,10 @@
-#' @export CSmeze
-#' @importFrom stats spline
+#' @export CSmezesi
 #'
-CSmeze <- function(cx, pro, xo, marg, cofam, tht){
+CSmezesi <- function(cx, pro, xo, marg, cofam, tht){
 	u = vfpripo(cx[1], pro)
 	# u = vfprifo(cx, pro)
 	v = vfex(C = cx, u, th = tht, fm = cofam)
+	# print(u); print(v)
 	c1 = vfmrg(marg, 1, u, yo = xo, cdf = TRUE)
 	s1 = vfmrg(marg, 1, u, yo = xo, cdf = FALSE)
 	c2 = vfmrg(marg, 2, v, yo = xo, cdf = TRUE)
@@ -37,8 +37,10 @@ CSmeze <- function(cx, pro, xo, marg, cofam, tht){
 	sucx = subset(pacx, pacx$c1 >= tlc[1] & pacx$c1 <= brc[1])
 	oc = order(sucx$c1)
 	###########################
-	nxw = length(sucx$c1) * 4
-	sps = spline(x = susx[os, 1], y = susx[os, 2], n = nxw, method = "hyman")
-	spc = spline(x = sucx[oc, 1], y = sucx[oc, 2], n = nxw, method = "hyman")
-	return(list(tlc = tlc, brc = brc, sps = sps, spc = spc))
+	# nxw = length(sucx$c1) * 4
+	# sps = spline(x = susx[os, 1], y = susx[os, 2], n = nxw, method = "hyman")
+	# spc = spline(x = sucx[oc, 1], y = sucx[oc, 2], n = nxw, method = "hyman")
+	# print(sps)
+	# return(list(tlc = tlc, brc = brc, sps = sps, spc = spc))
+	return(list(tlc = tlc, brc = brc, sp = susx[os, ], cp = sucx[oc, ]))
 }

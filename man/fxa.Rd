@@ -21,7 +21,7 @@ Character vector size2. Now possible vector components: \cr
   "weibull", "gamma", "lnorm", "norm", "beta", "betapr".
 }
   \item{cofam}{
-A name of copula: "gaussian", "clayton", "frank", "gumbel", "joe",
+A name of copula: "clayton", "frank", "gumbel", "joe",
   "amh", "fgm". \cr
 }
   \item{xo}{

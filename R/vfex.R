@@ -17,7 +17,9 @@ vfex <- function(C, u, th, fm)
 					if (fm == "amh"){
 						v = vfalihaq(C, u, th)
 					} else {
-						v = vfjoe(C, u, th)
+						if (fm == "joe"){
+							v = vfjoe(C, u, th)
+						}
 					}
 				}
 			}

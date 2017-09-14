@@ -1,6 +1,7 @@
 #' @export vfpripo
 #'
 vfpripo <- function(ck, pro){
+	if (is.finite(ck) & ck >= 0 & ck <= 1) {
 	npro = length(pro)
 	k = min(which(pro > 1)) - 1
 	# b = numeric(1)
@@ -24,4 +25,5 @@ vfpripo <- function(ck, pro){
 		h = c(h, as.numeric(a[[i]]))
 	}
 	return(c(ck + h, pro[(k-1):1]))
+	} else {return(NaN)}
 }

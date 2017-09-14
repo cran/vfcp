@@ -1,5 +1,4 @@
 #' @export fxa
-#' @importFrom VineCopula BiCopPDF
 #' @importFrom stats dbeta dgamma dlnorm dnorm dweibull
 #' @importFrom stats pbeta pgamma plnorm pnorm pweibull
 #' @importFrom extraDistr dbetapr pbetapr
@@ -51,9 +50,9 @@ fxa = function(z, marg, cofam, xo, tht){
     if (cofam == "fgm"){
       kopula = fgmCopula(param = tht)
       return(dCopula(u, kopula)*f[1]*f[2])
-    } else {
+    } # else {
       # print(paste(BiCopPDF(u[1], u[2], family = fm, par = tht), f[1], f[2]))
-      return(BiCopPDF(u[1], u[2], family = fm, par = tht)*f[1]*f[2])
-    }
+    #   return(BiCopPDF(u[1], u[2], family = fm, par = tht)*f[1]*f[2])
+    # }
   }
 }

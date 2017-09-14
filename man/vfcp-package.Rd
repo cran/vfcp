@@ -18,8 +18,8 @@ Computation \code{v} when \code{u} and \code{C(u, v)} copula are
 \tabular{ll}{
 Package: \tab vfcp\cr
 Type: \tab Package\cr
-Version: \tab 1.2.0\cr
-Date: \tab 2017-08-31\cr
+Version: \tab 1.3.0\cr
+Date: \tab 2017-09-14\cr
 License: \tab GPL (>= 3)\cr
 }
 }

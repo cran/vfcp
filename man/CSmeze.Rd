@@ -2,7 +2,7 @@
 \alias{CSmeze}
 \title{
 Defines the area between CDF and Survival for the copula probability
-  value.
+  value
 }
 \description{
 The area defines the left and bottom line of the cumulative distribution function, the CDF, and the right and top line of the survival function. Both functions have the same probability.
@@ -30,7 +30,7 @@ Character vector size2. Now possible vector components: \cr
   "weibull", "gamma", "lnorm", "norm", "beta", "betapr".
 }
   \item{cofam}{
-A name of copula: "gaussian", "clayton", "frank", "gumbel", "joe",
+A name of copula: "clayton", "frank", "gumbel", "joe",
   "amh", "fgm".
 }
   \item{tht}{
@@ -54,37 +54,6 @@ A list with components as follows: \cr
 
 \author{
 Josef Brejcha
-}
-\examples{
-tht = 5.6
-cx = c(0.275)
-pro = c(0.999, 0.99, 16, 8, 4)
-fam = "gumbel"
-marg = c("weibull", "betapr")
-xo = c(200, 2.75, 16.5, 6.60)
-e12 = vfeduo(marg, xo)
-p = numeric(length(cx))
-x12 = qweibull(0.975, scale = xo[1], shape = xo[2])
-y12 = qbetapr(0.975, shape1 = xo[3], shape2 = xo[4])
-mtit = paste(fam, " ... ", marg[1], "(", xo[1], ", ", xo[2], ")",
-						 " ", marg[2], "(", xo[3], ", ", xo[4], ")",
-						 sep = "")
-plot(NULL, NULL, xlim = c(0, x12), ylim = c(0, y12),
-     xlab = paste("x, E[x] = ", round(e12[1], 2)),
-		 ylab = paste("y, E[y] = ", round(e12[2], 2)),
-		 main = mtit)
-points(e12[1], e12[2], pch = 20)
-abline(h = e12[2], v = e12[1])
-grid(col = "grey50")
-#===========================
-for (k in 1:length(cx)){
-	mzu = CSmeze(cx[k], pro, xo, marg, cofam = fam, tht)
-	lines(mzu$sps, col = k)
-	lines(mzu$spc, col = k)
-	p[k] = vfpint(p, k, mzu, marg, fam, xo, tht)
-}
-gd = paste(c("C", format(cx, 4)), c("       p" , round(p, 4)))
-legend("topright", legend = gd, text.col = c(1, 1:length(p)),bty = "n")
 }
 
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")

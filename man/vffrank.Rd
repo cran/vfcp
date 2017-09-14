@@ -34,12 +34,12 @@ and copula probability value.
 Josef Brejcha
 }
 \examples{
-require(VineCopula)
 C <- 0.3
 tht <- 6
 u <- c(0.35, 0.4, 0.45)
 v <- vffrank(C, u, tht)
-BiCopCDF(u, v, family = 5, par = tht)
+kop = frankCopula(tht)
+pCopula(cbind(u, v), kop)
 ##
 ## CDF Frank ##
 tht = 5
