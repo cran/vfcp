@@ -1,6 +1,6 @@
 #' @export vfmrg
 #' @importFrom extraDistr qbetapr
-#' @importFrom stats qbeta
+#' @importFrom stats qbeta qweibull qgamma qlnorm qnorm
 #'
 vfmrg <- function(rdj, i, cosi, yo, cdf)
 {

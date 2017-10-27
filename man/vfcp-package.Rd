@@ -12,14 +12,15 @@ Computation \code{v} when \code{u} and \code{C(u, v)} copula are
     be tabulated as option. The numerical definition of a common
     area limited by lines of the cumulative distribution function
     and survival function. Approximate quantification of the
-    probability of this area.
+    probability of this area. In addition to 'amh', the copula
+    dimension may be larger than 2.
 }
 \details{
 \tabular{ll}{
 Package: \tab vfcp\cr
 Type: \tab Package\cr
-Version: \tab 1.3.0\cr
-Date: \tab 2017-09-14\cr
+Version: \tab 1.4.0\cr
+Date: \tab 2017-10-24\cr
 License: \tab GPL (>= 3)\cr
 }
 }

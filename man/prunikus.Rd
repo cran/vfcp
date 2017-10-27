@@ -5,8 +5,7 @@ The coordinates of the intersection lines of the cumulative distribution functio
 }
 \description{
 The coordinates of the intersection lines of the cumulative
-   distribution function and survival function. An auxiliary
-   function used in \code{\link{CSmeze}}.
+   distribution function and survival function.
 }
 \usage{
 prunikus(x, y)

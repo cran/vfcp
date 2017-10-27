@@ -29,7 +29,7 @@ vfploto <- function(cx, pro, fam, marg, xo, tht,
 			xyxp = vfmrg(rdj = marg, i = 1, cosi = up, yo = xo, cdf)
 			xyyk = vfmrg(rdj = marg, i = 2, cosi = vk, yo = xo, cdf)
 			xyyp = vfmrg(rdj = marg, i = 2, cosi = vp, yo = xo, cdf)
-			e = vfeduo(marg, xo)
+			e = vfenuo(marg, xo)
 			if (cdf){
 				limx = c(min(0, xyxp), min(max(0, xyxk), 2.5*e[1]))
 				limy = c(min(0, xyyp), min(max(0, xyyk), 3*e[2]))
@@ -40,7 +40,7 @@ vfploto <- function(cx, pro, fam, marg, xo, tht,
 			# print(limx); print(limy)
 			e = c(NA, NA)
 			if (ped){
-				e = vfeduo(marg, xo)
+				e = vfenuo(marg, xo)
 				# points(e[1], e[2], pch = 19, col = 1)
 				m2 = paste(" E[x, y] = {", round(e[1], 4), ", ",
 									 round(e[2], 4), "}")
@@ -69,13 +69,13 @@ vfploto <- function(cx, pro, fam, marg, xo, tht,
 
 			#========
 			if (rtn){
-				e = vfeduo(marg, xo)
+				e = vfenuo(marg, xo)
 				cz[[k]] = list(Type = tp, P = cx[k], x = xyx, y = xyy,
 											 u = u[k, ], v = v[k, ], e = e)
 			}
 		}
 		if (ped){
-				# e = vfeduo(marg, xo)
+				# e = vfenuo(marg, xo)
 				points(e[1], e[2], pch = 19, col = 1)
 			}
 	}

@@ -40,23 +40,6 @@ u <- c(0.35, 0.4, 0.45)
 v <- vffrank(C, u, tht)
 kop = frankCopula(tht)
 pCopula(cbind(u, v), kop)
-##
-## CDF Frank ##
-tht = 5
-cx = seq(0.1, 0.9, 0.1)
-nC = length(cx)
-hor = 1 - 1e-13
-dol = 50
-tit = paste("CDF: frank ... tht =", tht)
-plot(x = NULL, y = NULL, xlim = c(0, 1), ylim = c(0, 1),
-		 xlab = "u", ylab = "v", type = "n", main = tit)
-for(k in 1:nC){
-  u = vfprip(Ck = cx[k], hom = hor, jm = dol)
-  v = vffrank(cx[k], u, tht)
-  lines(u, v, col = k)
-}
-legend("bottomright", legend = cx, text.col = 1:nC, bty = "n")
-grid()
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

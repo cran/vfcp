@@ -1,5 +1,5 @@
-\name{vfeduo}
-\alias{vfeduo}
+\name{vfenuo}
+\alias{vfenuo}
 
 \title{
 Expected values of marginal distributions
@@ -9,27 +9,27 @@ Auxiliary function that calculates the expected values of marginal
   distributions.
 }
 \usage{
-vfeduo(marg, xo)
+vfenuo(marg, xo)
 }
 
 \arguments{
   \item{marg}{
-Character vector size 2. It components now can be c("weibull",
-  "gamma", "lnorm", "norm", "betapr", "beta").
+Character vector size greater than or equal to 2. Its components
+  can now be c("weibull", "gamma", "lnorm", "norm", "betapr", "beta").
 }
   \item{xo}{
-Vector size 4 of parameters of \code{marg}. \cr
+Vector size \code{2*length(marg)} of parameters of \code{marg}. \cr
   \tabular{rl}{
-  \code{xo[1], xo[3]} \tab {\code{scale}, \code{meanlog},
+  \code{xo[odd]} \tab {\code{scale}, \code{meanlog},
     \code{mean}, \code{shape1}} \cr
-  \code{xo[2], xo[4]} \tab {\code{shape}, \code{sdlog},
+  \code{xo[even]} \tab {\code{shape}, \code{sdlog},
     \code{sd}, \code{shape2}} \cr
   }
 }
 }
 
 \value{
-Numeric vector size 2.
+Numeric vector size equal to \code{length(marg)}.
 }
 
 \author{
@@ -37,7 +37,8 @@ Josef Brejcha
 }
 
 \examples{
-vfeduo(marg = c("betapr", "beta"), xo = c(5, 5, 3, 20))
+vfenuo(marg = c("betapr", "beta", "norm", "weibull"),
+  xo = c(5, 5, 3, 20, 30, 5, 100, 1.5))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

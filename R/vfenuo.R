@@ -1,10 +1,11 @@
-#' @export vfeduo
+#' @export vfenuo
 #'
-vfeduo <- function(marg, xo)
+vfenuo <- function(marg, xo)
 {
-  k = 0
-  e = numeric(2)
-  for(i in 1:2){
+  nuo = length(marg)
+	k = 0
+  e = numeric(nuo)
+  for(i in 1:nuo){
     if (marg[i] == "weibull"){
       e[i] = xo[i + k] * gamma(1 + 1/xo[i + k + 1])
     } else {

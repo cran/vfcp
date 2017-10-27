@@ -15,7 +15,7 @@ vfmrg(rdj, i, cosi, yo, cdf)
 
 \arguments{
   \item{rdj}{
-A character vector size 2. Its components are from
+A character vector. Its components are from
   c("weibull", "gamma", "lnorm", "norm", "betapr", "beta").
 }
   \item{i}{
@@ -25,7 +25,7 @@ An index of the \code{rdj}
 A vector of probabilities
 }
   \item{yo}{
-Vector size 4 of parameters of \code{rdj} \cr
+Vector size \code{2*length(rdj)} of parameters of \code{rdj} \cr
   \tabular{rl}{
   \code{yo[1], yo[3]} \tab {\code{scale}, \code{meanlog},
     \code{mean}, \code{shape1}} \cr
